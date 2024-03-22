@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Food } from '../../../shared/models/Food';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from 'src/app/services/cart.service';
-import { FoodService } from 'src/app/services/food.service';
-import { Food } from 'src/app/shared/models/Food';
+import { FoodService } from '../../../services/food.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-food-page',
   templateUrl: './food-page.component.html',
-  styleUrls: ['./food-page.component.css']
+  styleUrl: './food-page.component.css'
 })
 export class FoodPageComponent implements OnInit {
   food!: Food;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Cart } from '../shared/models/Cart';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CartItem } from '../shared/models/CartItem';
 import { Food } from '../shared/models/Food';
 

@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  imports:[FormsModule,
-           ReactiveFormsModule],
-           standalone:true,
-  styleUrls: ['./sign-up.component.css']
- 
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css'
 })
+
 export class SignUpComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router,private toast: ToastrService) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -34,13 +31,15 @@ export class SignUpComponent implements OnInit {
     if (this.registerForm.valid) {
       // Perform registration logic here
       console.log('Form submitted successfully');
-      alert('Registration Successfully!');
+     // alert('Registration Successfully!');
+     this.toast.success("Registeration successfull!!!","Success");
       console.log(this.registerForm.value);
       this.router.navigate(['/login']);
     } else {
       // Form is invalid
       console.error('Form is invalid');
-      alert('Registration Failed!');
+     // alert('Registration Failed!');
+     this.toast.error("Registeration Failed!!!","Error");
     }
   }
 

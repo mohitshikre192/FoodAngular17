@@ -17,7 +17,7 @@
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Enter your Password" formControlName="password" required>
+                <input type="Password" placeholder="Enter your Password" formControlName="Password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
             <div class="remember-forgot">
@@ -33,25 +33,26 @@
 </body>
 
 </html> -->
-
+<body>
+    
 
 <div class="login-container">
     <div class="login-content">
-        <mat-toolbar class="login-toolbar" color="primary">Grocery Application</mat-toolbar>
+        <mat-toolbar class="login-toolbar" color="primary">Login</mat-toolbar>
         <mat-card>
             <form [formGroup]="loginForm" #formDirective="ngForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <mat-form-field appearance="fill">
-                        <mat-label>Username</mat-label>
-                        <mat-icon matPrefix>person_outline</mat-icon>
-                        <input matInput type="text" formControlName="username" />
+                        <mat-label>Email</mat-label>
+                        <mat-icon matPrefix></mat-icon>
+                        <input matInput type="text" formControlName="Email" />
                         <mat-error *ngIf="
-                          loginForm.get('username')?.errors &&
-                          (loginForm.get('username')?.dirty ||
-                          loginForm.get('username')?.touched)
+                          loginForm.get('Email')?.errors &&
+                          (loginForm.get('Email')?.dirty ||
+                          loginForm.get('Email')?.touched)
                         ">
-                            <span *ngIf="loginForm.get('username')?.errors?.['required']">Name is required.</span>
-                            <span *ngIf="loginForm.get('username')?.errors?.['minlength']">Minimum length should be
+                            <span *ngIf="loginForm.get('Email')?.errors?.['required']">Name is required.</span>
+                            <span *ngIf="loginForm.get('Email')?.errors?.['minlength']">Minimum length should be
                                 3.</span>
                         </mat-error>
                     </mat-form-field>
@@ -60,15 +61,15 @@
                 <div class="form-group">
                     <mat-form-field appearance="fill">
                         <mat-label>Password</mat-label>
-                        <mat-icon matPrefix>lock_outline</mat-icon>
-                        <input matInput type="password" formControlName="password" />
+                        <mat-icon matPrefix></mat-icon>
+                        <input matInput type="password" formControlName="Password" />
                         <mat-error *ngIf="
-                          loginForm.get('password')?.errors &&
-                          (loginForm.get('password')?.dirty ||
-                          loginForm.get('password')?.touched)
+                          loginForm.get('Password')?.errors &&
+                          (loginForm.get('Password')?.dirty ||
+                          loginForm.get('Password')?.touched)
                         ">
-                            <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</span>
-                            <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Minimum length should be
+                            <span *ngIf="loginForm.get('Password')?.errors?.['required']">Password is required.</span>
+                            <span *ngIf="loginForm.get('Password')?.errors?.['minlength']">Minimum length should be
                                 6.</span>
                         </mat-error>
                     </mat-form-field>
@@ -80,8 +81,11 @@
             </form>
 
             <div class="register-link">
-                <span>If You don't have an account yet please <a routerLink='/auth/register'>REGISTER HERE</a></span>
+                <span>If You don't have an account yet please <a routerLink='/signup'>REGISTER HERE</a></span>
             </div>
         </mat-card>
     </div>
 </div>
+
+    
+</body>
